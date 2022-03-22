@@ -16,6 +16,7 @@ void acceptProton()
   style();
   const Double_t T_lab[2] = {11, 1.25};  // kinetic energy region
   const Double_t m = 0.9315;  // u
+  const Double_t mp = 0.93827;
   TLorentzVector targ(0,0,0,m);
 
   Double_t E[2], E_cms[2];
@@ -66,7 +67,7 @@ void acceptProton()
    for(int i=0;i<2;i++) {
      for(int j=0;j<2;j++) {
        fun[i][j] = new TF1(Form("fun_%d",i),Perp,x1,x2,3);
-       fun[i][j]->SetParameters(m,eta_ref[j],y0[i]);
+       fun[i][j]->SetParameters(mp,eta_ref[j],y0[i]);
        fun[i][j]->SetRange(eta_ref[j]-y0[i], -y0[i]);
        fun[i][j]->SetLineStyle(i+1);
        fun[i][j]->SetLineColor(i+1);
