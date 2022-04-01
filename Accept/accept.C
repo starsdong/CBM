@@ -14,7 +14,7 @@ Double_t Perp(Double_t *x, Double_t *par)
 void accept(const Int_t ip = 0)
 {
   style();
-  const Double_t T_lab[2] = {11, 1.25};  // kinetic energy region
+  const Double_t T_lab[2] = {11, 2.85};  // kinetic energy region
   const Double_t m = 0.9315;  // u
   const Double_t mp[6] = {0.93827, 0.13957, 0.49367, 1.019, 2.992, 3.923};
   const Char_t *name[6] = {"Proton", "Pion", "Kaon", "Phi", "H3L", "H4L"};
@@ -49,7 +49,7 @@ void accept(const Int_t ip = 0)
   c1->Draw();
   
    double x1 = -2.5;
-   double x2 = 4.0;
+   double x2 = 3.0;
    double y1 = 0.0;
    double y2 = 3.0;
    
@@ -83,6 +83,11 @@ void accept(const Int_t ip = 0)
      drawText(-y0[i]-0.05, y1+0.35, Form("%3.1f",E_cms[i]), 32, 0.045, 0, i+1);
    }
    drawText(-2.3, 0.35, "#sqrt{s_{NN}}", 32, 0.05);
+
+   drawLine(-0.5, 0.4, 0.5, 0.4, 2, 2, 4);
+   drawLine(-0.5, 2.0, 0.5, 2.0, 2, 2, 4);
+   drawLine(-0.5, 0.4, -0.5, 2.0, 2, 2, 4);
+   drawLine(0.5, 0.4, 0.5, 2.0, 2, 2, 4);
 
    drawHistBox(x1,x2,y1,y2);
 
